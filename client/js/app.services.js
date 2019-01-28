@@ -21,11 +21,11 @@ class AppService{
         const socket = io.connect( { query: `userId=${userId}` });
         this.socket = socket;
     }
- 
+
     socketEmit(eventName, params){
         this.socket.emit(eventName, params);
     }
- 
+
     socketOn(eventName, callback) {
         this.socket.on(eventName, (response) => {
             if (callback) {
@@ -49,7 +49,7 @@ class AppService{
             });
         });
     }
- 
+
     scrollToBottom(){
         const messageThread = document.querySelector('.message-thread');
         setTimeout(() => {
@@ -57,3 +57,4 @@ class AppService{
         }, 10);        
     }
 }
+

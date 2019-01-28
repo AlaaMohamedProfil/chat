@@ -51,7 +51,7 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
             }
         })
         .then((response) => {
-            $location.path(`/home/${response.userId}`);
+            $location.path(`/login/${response.userId}`);
             $scope.$apply();
         })
         .catch((error) => {
@@ -68,7 +68,7 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
             }
         })
         .then((response) => {
-            $location.path(`/home/${response.userId}`);
+            $location.path(`/login/${response.userId}`);
             $scope.$apply();
         })
         .catch((error) => {
