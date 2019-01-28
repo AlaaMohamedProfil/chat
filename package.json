@@ -4,13 +4,8 @@
   "description": "Simple chat tool to communicate between two peers",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlaaMohamedProfil/chat.git"
@@ -26,8 +21,5 @@
     "express": "^4.16.2",
     "mysql": "^2.15.0",
     "socket.io": "^2.0.4"
-  },
-  "devDependencies": {
-    "eslint": "^4.16.0"
   }
 }
