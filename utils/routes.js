@@ -1,3 +1,5 @@
+'use strict';
+
 const helper = require('./helper');
 const path = require('path');
 class Routes{
@@ -68,11 +70,11 @@ class Routes{
 			};
 			if(data.username === '' || data.username === null) {
 	            loginResponse.error = true;
-	            loginResponse.message = `username cant be empty.`;
+	            loginResponse.message = `Benutzername darf nicht leer sein.`;
 	            response.status(412).json(loginResponse);
 	        }else if(data.password === '' || data.password === null){				            
 	            loginResponse.error = true;
-	            loginResponse.message = `password cant be empty.`;
+	            loginResponse.message = `Passwort darf nicht leer sein.`;
 	            response.status(412).json(loginResponse);
 	        }else{
 				const result = await helper.loginUser(data);

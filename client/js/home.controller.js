@@ -1,3 +1,5 @@
+'user strict';
+
 app.controller('homeController', function ($scope, $routeParams, $location, appService){
     
     const UserId = $routeParams.userId;

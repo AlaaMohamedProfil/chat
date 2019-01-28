@@ -4,7 +4,7 @@ body{
 
 /* Auth page CSS starts */
 .auth-page{
-	background: #ffffff;
+	background:  #0fa593 ;
 	height: 100%;
 }
 
@@ -19,14 +19,13 @@ body{
 	padding: 5%;
 	border-radius: 5px;
 	border: solid 1px #0000003d;
+	background:   #edf5f4  ;
 }
-
-.auth-header-btn{
-	width: 49%;
-}
-
-.login,
-.register {
+.button{
+	background:  #0fa593;
+	color: #fff;
+} 
+.login{
 	padding: 1.5%;
 }
 /* Auth page CSS ends */

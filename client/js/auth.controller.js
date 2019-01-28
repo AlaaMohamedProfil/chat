@@ -1,3 +1,5 @@
+'user strict';
+
 app.controller('authController', function ($scope, $location, $timeout, appService) {
 
     $scope.data = {
@@ -39,23 +41,6 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
 
     $scope.clearCheckUserName = () => {
         $timeout.cancel(TypeTimer);
-    }
-
-    $scope.registerUser = () => {
-        appService.httpCall({
-            url: '/registerUser',
-            params: {
-                'username': $scope.data.regUsername,
-                'password': $scope.data.regPassword
-            }
-        })
-        .then((response) => {
-            $location.path(`/home/${response.userId}`);
-            $scope.$apply();
-        })
-        .catch((error) => {
-            alert(error.message);
-        });
     }
 
     $scope.loginUser = () => {
