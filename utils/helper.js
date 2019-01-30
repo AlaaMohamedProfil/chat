@@ -7,19 +7,6 @@ class Helper{
 		this.db = DB;
 	}
 
-	async userNameCheck (username){
-		return await this.db.query(`SELECT count(username) as count FROM users WHERE LOWER(username) = ?`, `${username}`);
-	}
-
-	async registerUser(params){
-		try {
-			return await this.db.query("INSERT INTO users (`username`,`password`,`online`) VALUES (?,?,?)", [params['username'],params['password'],'Y']);
-		} catch (error) {
-			console.error(error);
-			return null;
-		}
-	}
-
 	async loginUser(params){
 		try {
 			return await this.db.query(`SELECT id FROM users WHERE LOWER(username) = ? AND password = ?`, [params.username,params.password]);
