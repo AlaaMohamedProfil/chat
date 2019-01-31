@@ -80,12 +80,12 @@ class Routes{
 				const result = await helper.loginUser(data);
 				if (result === null || result.length === 0) {
 					loginResponse.error = true;
-					loginResponse.message = `Invalid username and password combination.`;
+					loginResponse.message = `Ihr Benutzername oder Passwort ist falsch.`;
 					response.status(401).json(loginResponse);
 				} else {
 					loginResponse.error = false;
 					loginResponse.userId = result[0].id;
-					loginResponse.message = `User logged in.`;
+					loginResponse.message = `Erfolg.`;
 					response.status(200).json(loginResponse);
 				}
 	        }

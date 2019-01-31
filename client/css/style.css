@@ -54,11 +54,10 @@ body{
 	cursor: pointer;
 }
 
-.message-container{
-	padding: 20px 20px 20px 0px;
-	background-color: rgba(255, 255, 255, 0.80);
-	margin: 10px 10px 10px 0px;
-	border-radius: 5px;
+.message-heading{
+	background:   #fff  ;
+	height: 50px;
+	margin-bottom: 0px;
 }
 
 .message-thread {
@@ -67,13 +66,16 @@ body{
 	height: 400px;
 	width: 100%;
 	border: solid 1px #BDBDBD;
+	border-radius: 5px;
 	margin: 0px !important;
 	padding: 5px !important;
+	background-color:   #eee8e8 !important ;
 }
 
 .message-thread li {
 	max-width: 300px;
 	border-color: solid 0.5px rgba(0, 0, 0, 0.32);
+	border-radius: 5px;
 	clear: both;
 	text-decoration: none;
 	list-style-type: none;
@@ -94,10 +96,7 @@ body{
 }
 
 .align-left {
-	float: left !important;;
-}
-.align-right {
-	float: right !important;;
+	float: left !important;
 }
 
 .message-text{
@@ -105,22 +104,72 @@ body{
 }
 
 
-.chat-list-container {
-	padding: 20px 0px 20px 20px;
-}
-
 .chat-list-heading {
-	margin: 10px 10px 10px 0px;
+	background: #eee8e8;
+	height: 50px;
+	margin-bottom: 0px;
 }
 
 .chat-list{
 	overflow-y: scroll;
 	height: 400px;
 	width: 100%;
-	margin: 10px 10px 10px 0px;
-	padding-left: 20px;
 }
 
 .chat-list li{
 	cursor: pointer;
 }
+.no-margin {
+	margin:0 !important;
+}
+.no-padding {
+	padding:0 !important;
+}
+.header-padding {
+   padding: 10px 0px 0px 10px;
+   display: inline-block;
+   vertical-align: middle;
+}
+.fa-cog {
+   color: #b2adad;
+   vertical-align: middle;
+   padding-top: 10px;
+   display: inline-block;
+}
+.align-right{
+	float: right !important;
+	padding-right: 10;
+	padding-top: 15px !important;
+}
+.red {
+	color: #c40505;
+	font-size: 1em;
+ }
+ .yellow {
+	color: #dfd006;
+ }
+ .green {
+	color: #00b600;
+ }
+ .user-message{
+	background:  #0fa593 !important;
+	color: #fff !important;
+ }
+ .friend-message{
+	background:  #fff !important;
+	color: rgb(0, 0, 0) !important; 
+ }
+ .message-thread ::-webkit-scrollbar { display: none;  }
+ .message-thread  { overflow: -moz-scrollbars-none; }
+ .message-thread  { -ms-overflow-style: none; }
+ .messageInput{
+	 width:85% !important;
+	 display: inline-block;
+	 margin-bottom: 10px;
+ }
+ .grey-button{
+	color: #fff !important;
+	background:  #0fa593 !important;
+	height: 37px;
+	vertical-align: top;
+ }

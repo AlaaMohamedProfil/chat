@@ -100,9 +100,8 @@ app.controller('homeController', function ($scope, $routeParams, $location, appS
         });
     }
 
-    $scope.sendMessage = (event) => {
+    $scope.sendMessage = () => {
 
-        if (event.keyCode === 13) {
 
             let toUserId = null;
             let toSocketId = null;
@@ -138,7 +137,6 @@ app.controller('homeController', function ($scope, $routeParams, $location, appS
                 alert('Unexpected Error Occured,Please contact Admin');
             }
             /* Emmiting socket event to server with Message, ends */
-        }
     }
 
     $scope.alignMessage = (fromUserId) => {

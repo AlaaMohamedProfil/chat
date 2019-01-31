@@ -2,50 +2,53 @@
     <!-- Home page body start -->
     <div class = "container home-container">
     <div class="home-body">
-        <div class="row">
+        <div class="row no-margin">
             <!-- Chat list Markup starts -->
-            <div class="col-md-4">
-                    <div class="chat-list-container">
-                        <p class="chat-list-heading"><i class="fa fa-list" aria-hidden="true"></i> <span >Chat list</span> </p>
+            <div class="col-md-4 no-padding">
+                        <p class="chat-list-heading">
+                            <span class="header-padding">
+                                <i class="fa fa-circle red" aria-hidden="true"></i>
+                                <i class="fa fa-circle yellow" aria-hidden="true"></i>
+                                <i class="fa fa-circle green" aria-hidden="true"></i>
+                            </span> 
+                        </p>
                         <div class="chat-list">
                             <ul class="list-group" ng-if="data.chatlist.length > 0">
                                 <li class="list-group-item"
                                     ng-repeat="friend in data.chatlist"
                                     ng-click="selectFriendToChat(friend.id)"
-                                    ng-class="{'active':friend.id == data.selectedFriendId}"
+                                    
                                 >{{friend.username}}</li>
                             </ul>
                             <div class="alert alert-info" ng-if="data.chatlist.length === 0">
                                 <strong>No one is online to chat, ask someone to Login.</strong>
                             </div>
                         </div>                    
-                    </div>
                 </div>
                 <!-- Chat List Markup ends -->
             <!-- Message Area Markup starts -->
-            <div class="col-md-8">
-                <div class="message-container">
-                    <p ng-show="data.selectedFriendId !== null" ? true : false >
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <span class="message-heading"> Chat History With {{data.selectedFriendName}}</span>
+            <div class="col-md-8 no-padding">
+                    <p class="message-heading" ng-show="data.selectedFriendId !== null" ? true : false >
+                        <span class="header-padding"> Chatte mit {{data.selectedFriendName}}</span>
+                        <i class="fa fa-cog fa-lg align-right" aria-hidden="true"></i>
                     </p>
                     <div class="message-list">
                         <ul class="message-thread">
                             <li ng-repeat="messagePacket in data.messages"
-                                ng-class="{ 'align-right' : alignMessage(messagePacket.fromUserId) } ">
+                                ng-class="{ 'align-right user-message' : alignMessage(messagePacket.fromUserId),  
+                                'friend-message' : alignMessage(messagePacket.toUserId)} ">
                                 {{messagePacket.message}}
                             </li>
                         </ul>
                     </div>
                     <div class="message-text">
-                        <textarea id="message" 
-                            class="message form-control" 
-                            placeholder="Type and hit Enter" 
-                            ng-keydown="sendMessage($event)"
-                        ></textarea>
+                        <input id="message" 
+                            class="messageInput form-control" 
+                            placeholder="Schreiben Sie Ihre Nachricht" 
+                        ></input>
+                        <button class="btn grey-button" ng-click="sendMessage()">Senden</button>
                     </div>
                 </div>
-            </div>
             <!-- Message Area Markup ends -->
 
         </div>
